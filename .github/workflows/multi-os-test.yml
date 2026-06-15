@@ -1,0 +1,49 @@
+name: Multi-OS Testing - Tirath Singh Padda
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test Ubuntu
+        run: echo "Testing on Ubuntu..."
+
+      - name: Show OS info
+        run: uname -a
+
+      - name: Create file
+        run: echo "Ubuntu test by Tirath Singh Padda" > test-ubuntu.txt
+
+      - name: Show file
+        run: cat test-ubuntu.txt
+
+      - name: Finish
+        run: echo "Ubuntu tests completed"
+
+  test-windows:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test Windows
+        run: echo "Testing on Windows..."
+
+      - name: Show OS info
+        run: systeminfo
+
+      - name: Create file
+        run: echo Windows test by Tirath Singh Padda > test-windows.txt
+
+      - name: Show file
+        run: type test-windows.txt
+
+      - name: Finish
+        run: echo "Windows tests completed"
