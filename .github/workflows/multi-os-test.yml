@@ -3,7 +3,7 @@ name: Multi-OS Testing - Tirath Singh Padda
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   test-ubuntu:
